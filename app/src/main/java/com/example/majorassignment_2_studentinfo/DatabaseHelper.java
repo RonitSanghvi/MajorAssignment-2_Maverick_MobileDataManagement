@@ -17,8 +17,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "studentInfo.db";
     public static final String TABLE_NAME = "students";
 
+    // Database Creation.
     public DatabaseHelper( Context context) { super(context, DATABASE_NAME, null, 1); }
 
+    // "students" Table Created.
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME + "(name TEXT, number INTEGER, email TEXT PRIMARY KEY, course TEXT) ");
@@ -79,7 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else { return true; }
     }
 
-
+    // Function to get the saved student data.
     public List<StudentModel> getStudentList() {
 
         List<StudentModel> returnList = new ArrayList<>();

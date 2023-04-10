@@ -15,11 +15,13 @@ public class StudentModel {
         this.course = course;
     }
 
+    // Model Created to Print data in View Page with proper format.
     @Override
     public String toString() {
         return "Name: " + name + "\nStudent No: " + number + "\nEmail: " + email + "\nCourse Code: " + course;
     }
 
+    // Function to return the Email of user.
     public String getEmail() { return email;}
 
 }

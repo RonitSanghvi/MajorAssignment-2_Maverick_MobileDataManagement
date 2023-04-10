@@ -20,8 +20,10 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity implements Validator.ValidationListener {
 
+    // Contains all functions regarding SQL.
     DatabaseHelper databaseHelper;
 
+    // @NotEmpty, @Pattern, @Email are some of the validations used in this project.
     @NotEmpty
     @Pattern(regex = "^[a-zA-Z\\s]*$", message = "Only alphabets are allowed")
     EditText et_name;
@@ -41,14 +43,17 @@ public class MainActivity extends AppCompatActivity implements Validator.Validat
     Button btn_add_student, btn_list_of_student;
     Validator validator;
 
+    // When validation got succeeded
     @Override
     public void onValidationSucceeded() {
         // Toast.makeText(this, "All validations are clear", Toast.LENGTH_SHORT).show();
     }
 
+    // When validations failed.
     @Override
     public void onValidationFailed(List<ValidationError> errors) {
         for (ValidationError error : errors) {
+
             View view = error.getView();
             String message = error.getCollatedErrorMessage(this);
             // Display error messages
@@ -122,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements Validator.Validat
             }
         });
 
+        // Go on the View Page.
         btn_list_of_student.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

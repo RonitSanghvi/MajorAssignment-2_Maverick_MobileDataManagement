@@ -85,6 +85,7 @@ public class studentList extends AppCompatActivity {
         });
     }
 
+    // Renders the data from SQLite and shows it in the View.
     private void  ShowStudentsOnListView(DatabaseHelper dataBaseHelper) {
         ArrayAdapter studentArrayAdapter = new ArrayAdapter<StudentModel>(com.example.majorassignment_2_studentinfo.studentList.this, android.R.layout.simple_list_item_1, databaseHelper.getStudentList());
         studentList.setAdapter(studentArrayAdapter);
